@@ -11,7 +11,7 @@ class ProductsListScreen extends StatefulWidget {
 }
 
 class _ProductsListScreenState extends State<ProductsListScreen> {
-  Dio dio = Dio(); // مكتبة Dio المستخدمة في أكوادك
+  Dio dio = Dio();
 
   @override
   Widget build(BuildContext context) {
@@ -23,20 +23,20 @@ class _ProductsListScreenState extends State<ProductsListScreen> {
         ],
       ),
       body: FutureBuilder(
-        future: dio.get("https://dummyjson.com/products"), // الرابط المطلوب [cite: 9]
+        future: dio.get("https://dummyjson.com/products"),
         builder: (ctx, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             List products = snapshot.data!.data["products"];
-            return ListView.builder( // استخدام ListView.builder [cite: 22]
+            return ListView.builder(
               itemCount: products.length,
               itemBuilder: (ctx, index) {
                 var item = products[index];
                 return ListTile(
-                  leading: Image.network(item['thumbnail'], width: 50), // [cite: 23]
-                  title: Text(item['title']), // [cite: 23]
-                  subtitle: Text("Price: \$${item['price']} (Discount: ${item['discountPercentage']}%)"), // [cite: 23]
+                  leading: Image.network(item['thumbnail'], width: 50),
+                  title: Text(item['title']),
+                  subtitle: Text("Price: \$${item['price']} (Discount: ${item['discountPercentage']}%)"),
                   onTap: () {
-                    // الانتقال للتفاصيل عند الضغط [cite: 24, 25]
+
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetailsScreen(product: item)));
                   },
                 );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart'; // استيراد شاشة تسجيل الدخول
+import 'login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: false, primarySwatch: Colors.brown),
-      home: LoginScreen(), // البداية من هنا [cite: 11]
+      home: LoginScreen(),
     );
   }
 }

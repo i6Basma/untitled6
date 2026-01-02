@@ -13,15 +13,15 @@ class LoginScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            TextFormField(controller: emailController, decoration: const InputDecoration(labelText: "Email")), // [cite: 16]
-            TextFormField(controller: passwordController, obscureText: true, decoration: const InputDecoration(labelText: "Password")), // [cite: 17]
+            TextFormField(controller: emailController, decoration: const InputDecoration(labelText: "Email")),
+            TextFormField(controller: passwordController, obscureText: true, decoration: const InputDecoration(labelText: "Password")),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // الانتقال إلى قائمة المنتجات [cite: 19]
+
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const ProductsListScreen()));
               },
-              child: const Text("Login"), // [cite: 18]
+              child: const Text("Login"),
             ),
           ],
         ),

@@ -11,10 +11,10 @@ class ProductDetailsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.network(product['thumbnail']), // [cite: 28]
+            Image.network(product['thumbnail']),
             SizedBox(
               height: 120,
-              child: ListView.builder( // عرض بقية الصور [cite: 28, 29]
+              child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: product['images'].length,
                 itemBuilder: (context, i) => Image.network(product['images'][i], width: 120),
@@ -25,12 +25,12 @@ class ProductDetailsScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(product['title'], style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)), // [cite: 27]
-                  Text("Price: \$${product['price']}"), // [cite: 27]
-                  Text("Discount: ${product['discountPercentage']}%"), // [cite: 27]
-                  Text("Rating: ${product['rating']}"), // [cite: 27]
+                  Text(product['title'], style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                  Text("Price: \$${product['price']}"),
+                  Text("Discount: ${product['discountPercentage']}%"),
+                  Text("Rating: ${product['rating']}"),
                   const SizedBox(height: 10),
-                  Text(product['description']), // [cite: 27]
+                  Text(product['description']),
                 ],
               ),
             ),
