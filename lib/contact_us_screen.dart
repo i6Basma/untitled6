@@ -23,6 +23,7 @@ class ContactUsScreen extends StatelessWidget {
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Form Submitted Successfully")));
               },
               child: const Text("Send"),
+
             ),
           ],
         ),
